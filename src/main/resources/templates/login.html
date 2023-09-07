@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+<head>
+    <meta name="_csrf" th:content="${_csrf.token}" charset="UTF-8"/>
+    <meta name="_csrf_hader" th:content="${_csrf.headerName}" charset="UTF-8"/>
+    <title>PAK玩投平台登录</title>
+
+    <link th:href="@{/css/login.css}" rel="stylesheet" type="text/css" media="all" />
+
+    <script th:src="@{/js/jquery-3.3.1/jquery-3.3.1.js}" type="text/javascript"></script>
+    <script th:src="@{/js/login.js}" type="text/javascript"></script>
+
+</head>
+<body>
+<div th:if="${param.error}">
+
+    Invalid username and password.
+
+</div>
+
+<div th:if="${param.logout}">
+
+    You have been logged out.
+
+</div>
+    <div class="message warning">
+        <div class="inset">
+            <div class="login-head">
+                <h1>用户登录</h1>
+            </div>
+
+            <form th:action="@{/login}" method="post">
+                <ul>
+                    <li><input type="text" class="text" value="用户名" id="username" name="username" onFocus="this.value = '';" onBlur="if (this.value == '') {this.value = '用户名';}"/><a href="#" class=" icon user"></a></li>
+                    <li><input type="password" id="password" name="password" value="" /> <a href="#" class="icon lock"></a></li>
+                </ul>
+
+                <div class="submit">
+                    <input type="submit" id="login" value="登录" />
+                    <div class="clear">  </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div class="footer">
+        <p>Copyright &#169; 2018-2028
+        北京赛车pk10 PAK玩投平台版权所有</p>
+    </div>
+</body>
+</html>

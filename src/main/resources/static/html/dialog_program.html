@@ -1,0 +1,43 @@
+<div id="fullbg"></div>
+<div id="dialog">
+    <p class="close"><a href="#" onclick="closeBg();">关闭</a></p>
+    <div class="ideal-wrap">
+        <label class="ideal-label" style="width: 64px;">追盘数:</label>
+        <input id="passCount" name="passCount" type="text" class="ideal-input">
+    </div>
+    <div class="ideal-wrap">
+        <label class="ideal-label" style="width: 64px;">设置数:</label>
+        <input id="numCount" name="numCount" type="text" class="ideal-input">
+    </div>
+    <!--<div id="moneydisplay" style="display: none;">
+        <div class="ideal-wrap">
+            <label class="ideal-label" style="width: 64px;margin:0 8px 0 0;">金额倍数:</label>
+            <input id="oneMoney" name="oneMoney" type="text" class="ideal-input" style="width:40px;">-
+            <input id="twoMoney" name="twoMoney" type="text" class="ideal-input" style="width:40px;">-
+            <input id="threeMoney" name="threeMoney" type="text" class="ideal-input" style="width:40px;">-
+            <input id="fourMoney" name="fourMoney" type="text" class="ideal-input" style="width:40px;">
+        </div>
+        <div class="ideal-wrap">
+            <label class="ideal-label" style="margin:0 76px 0 0;"></label>
+            <input id="fiveMoney" name="fiveMoney" type="text" class="ideal-input" style="width:40px;">-
+            <input id="sixMoney" name="sixMoney" type="text" class="ideal-input" style="width:40px;">-
+            <input id="sevenMoney" name="sevenMoney" type="text" class="ideal-input" style="width:40px;">-
+            <input id="eightMoney" name="eightMoney" type="text" class="ideal-input" style="width:40px;">
+        </div>
+    </div>-->
+    <div class="ideal-wrap">
+        <label class="ideal-label" style="width: 64px;margin:0 23px 0 0;">投注数:</label>
+        <input id="num1" name="num1" type="text" class="ideal-input" style="width:40px;">-
+        <input id="num2" name="num2" type="text" class="ideal-input" style="width:40px;">-
+        <input id="num3" name="num3" type="text" class="ideal-input" style="width:40px;">-
+        <input id="num4" name="num4" type="text" class="ideal-input" style="width:40px;">
+    </div>
+    <div class="ideal-wrap">
+        <label class="ideal-label" style="width: 64px;vertical-align: top;margin:0 8px 0 0;">归则描述:</label>
+        <textarea class="ideal-textarea" id="description" name="description"></textarea>
+    </div>
+    <div class="ideal-wrap" style="width:350px;">
+        <input type="hidden" id="programId">
+        <input type="button" id="rulesave" value="保存" class="dialogsavebtn" onclick="saveProgramRule();"/>
+    </div>
+</div>

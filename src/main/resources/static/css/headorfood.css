@@ -1,0 +1,375 @@
+blockquote,
+body,
+dd,
+div,
+dl,
+dt,
+fieldset,
+form,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+img,
+input,
+li,
+ol,
+p,
+pre,
+td,
+textarea,
+th,
+ul {
+  padding: 0;
+  margin: 0;
+}
+fieldset,
+img {
+  border: 0;
+}
+address,
+caption,
+cite,
+code,
+dfn,
+em,
+i,
+strong,
+th,
+var {
+  font-weight: normal;
+  font-style: normal;
+}
+li,
+ol,
+ul {
+  list-style: none;
+}
+caption,
+th {
+  text-align: left;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: normal;
+  font-size: 100%;
+}
+q:after,
+q:before {
+  content: '';
+}
+abbr,
+acronym {
+  border: 0;
+}
+.logo {
+  width: 224px;
+  height: 90px;
+  margin-right: 47px;
+   float: left;
+    padding-right: 300px;
+}
+a {
+  text-decoration: none;
+  /*display: block;*/
+  /*white-space: nowrap;*/
+  overflow: hidden;
+  text-overflow: ellipsis;
+  outline: none;
+}
+a:link {
+  color: #333333;
+}
+a:focus {
+  color: #f44a07;
+}
+a:hover {
+  color: #f44a07;
+}
+a:visited {
+  color: #333333;
+}
+.noboder {
+  border: 0 solid transparent !important;
+}
+.nomargin {
+  margin: 0 !important;
+}
+.nopadding {
+  padding: 0 !important;
+}
+.margt0 {
+  margin-top: 0 !important;
+}
+.colorred {
+  color: #f1010a !important;
+}
+.muneboxshadow {
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.18);
+}
+.numberbox li {
+  display: inline-block;
+  height: 36px !important;
+  width: 36px !important;
+  margin-right: 5px;
+  line-height: 36px;
+  text-align: center;
+  color: #FFFFFF;
+  font-size: 20px;
+}
+
+.bodybox {
+  font: 14px/1 Tahoma, "微软雅黑", "\5FAE\8F6F\96C5\9ED1", sans-serif, Arial, Helvetica, "\5b8b\4f53";
+  width: 100%;
+  min-width: 1200px;
+  overflow: auto;
+  background: #f0f0f0;
+  overflow: hidden;
+}
+.bodybox .nub01 {
+  background: url("../images/bjpknum.png?v=20172129") no-repeat -246px 0 !important;
+}
+.bodybox .nub02 {
+  background: url("../images/bjpknum.png?v=20172129") no-repeat -42px 0 !important;
+}
+.bodybox .nub03 {
+  background: url("../images/bjpknum.png?v=20172129") no-repeat -83px 0 !important;
+}
+.bodybox .nub04 {
+  background: url("../images/bjpknum.png?v=20172129") no-repeat -123px 0 !important;
+}
+.bodybox .nub05 {
+  background: url("../images/bjpknum.png?v=20172129") no-repeat -286px 0 !important;
+}
+.bodybox .nub06 {
+  background: url("../images/bjpknum.png?v=20172129") no-repeat -1px 0 !important;
+}
+.bodybox .nub07 {
+  background: url("../images/bjpknum.png?v=20172129") no-repeat -205px 0 !important;
+}
+.bodybox .nub08 {
+  background: url("../images/bjpknum.png?v=20172129") no-repeat -164px 0 !important;
+}
+.bodybox .nub09 {
+  background: url("../images/bjpknum.png?v=20172129") no-repeat -327px 0 !important;
+}
+.bodybox .nub10 {
+  background: url("../images/bjpknum.png?v=20172129") no-repeat -368px 0 !important;
+}
+.bodybox .liline {
+  color: #cccccc !important;
+}
+.bodybox .headboxf {
+  width: 100%;
+  background: #ffffff;
+  height: auto;
+  overflow: hidden;
+  position: relative;
+}
+.bodybox .headboxf .headboxh {
+  width: 100%;
+  position: relative;
+  z-index: 1;
+}
+.bodybox .headboxf .headboxh .headboxhc {
+  width: 1200px;
+  height: 30px;
+  margin: 0 auto;
+  overflow: hidden;
+}
+.bodybox .headboxf .headboxh .headboxhc > div {
+  display: inline-block;
+}
+.bodybox .headboxf .headboxh .headboxhc .headboxhl {
+  float: left;
+  height: 30px;
+}
+.bodybox .headboxf .headboxh .headboxhc .headboxhl ul li {
+  display: inline-block;
+  height: 30px;
+  line-height: 30px;
+  float: left;
+  text-align: center;
+  margin-left: 10px;
+  color: #666666;
+}
+.bodybox .headboxf .headboxh .headboxhc .headboxhl ul li a {
+  color: #666666;
+  font-size: 12px;
+}
+.bodybox .headboxf .headboxh .headboxhc .headboxhl ul li a:hover {
+  color: #D70042;
+}
+.bodybox .headboxf .headboxh .headboxhc .headboxhr {
+  height: 30px;
+  float: right;
+}
+.bodybox .headboxf .headboxh .headboxhc .headboxhr ul li {
+  display: inline-block;
+  height: 30px;
+  line-height: 30px;
+  float: left;
+  text-align: center;
+  margin-left: 10px;
+  color: #666666;
+}
+.bodybox .headboxf .headboxh .headboxhc .headboxhr ul li img {
+  margin-left: -5px;
+}
+.bodybox .headboxf .headboxh .headboxhc .headboxhr ul li a {
+  font-size: 14px;
+  color: #232323;
+}
+.bodybox .headboxf .headboxh .headboxhc .headboxhr ul li a:hover {
+  color: #D70042;
+}
+.bodybox #headdivbox {
+  width: 100%;
+}
+.bodybox .menubannbox {
+  width: 100%;
+  background:#D70042;
+}
+.bodybox .menubannbox .menubox {
+  width: 1200px;
+  height: 60px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+  background: #D70042;
+  text-align:center;
+}
+.bodybox .menubannbox .menubox > div {
+  display: inline-block;
+}
+
+.bodybox .menubannbox .menubox .menuboxl {
+  float: left;
+  width: 228px;
+  height: 60px;
+  line-height: 60px;
+  font-size: 18px;
+  text-align: left;
+  color: #FFFFFF;
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  position: relative;
+  z-index: 5;
+}
+
+.bodybox .menubannbox .menubox .menuboxr {
+  /*float: left;*/
+  position: relative;
+  z-index: 5;
+}
+.bodybox .menubannbox .menubox .menuboxr ul {
+  width: 100%;
+  display: inline-block;
+  position: relative;
+  height: 100%;
+  background: #D70042;
+  z-index: 6;
+}
+.bodybox .menubannbox .menubox .menuboxr ul .choose{
+  background:#212224;
+}
+.bodybox .menubannbox .menubox .menuboxr ul li {
+  display: inline-block;
+  float: left;
+  height: 60px;
+  line-height: 60px;
+  text-align: center;
+}
+.bodybox .menubannbox .menubox .menuboxr ul li a {
+  padding: 0 28px;
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  width: 100%;
+  display: block;
+  height: 60px;
+  line-height: 60px;
+  color: #FFFFFF;
+  text-align: center;
+  font-size: 16px;
+}
+.bodybox .menubannbox .menubox .menuboxr ul li span {
+  padding: 0 28px;
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  width: 100%;
+  display: block;
+  height: 60px;
+  line-height: 60px;
+  color: #FFFFFF;
+  text-align: center;
+  font-size: 16px;
+}
+.bodybox .menubannbox .menubox .menuboxr ul li:hover {
+  background: #212224;
+}
+.bodybox .menubannbox .menubox .menuboxr ul .menuselected {
+  background: #e18016;
+}
+.bodybox .menubannbox .menubox .menuboxr ul .lasli {
+  width: 120px;
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  float: right;
+  background: #e18016;
+}
+.bodybox .menubannbox .menubox .menuboxr ul .lasli a {
+  padding: 0 10px 0 5px;
+}
+.bodybox .menubannbox .menubox .menuboxr ul .lasli .phoneicon {
+  padding: 0;
+}
+.bodybox .menubannbox .menubox .menuboxr ul .lasli .phoneicon:before {
+  content: "";
+  vertical-align: middle;
+  width: 24px;
+  height: 30px;
+  display: inline-block;
+  background: url("../images/bjpknum.png?v=20172129") no-repeat -345px -99px;
+}
+.bodybox .footer3 {
+  width: 100%;
+  height: 60px;
+}
+.bodybox .footer3 .footer3c {
+  width: 1200px;
+  margin: 0 auto;
+  height: 60px;
+  line-height: 60px;
+  background: #f0f0f0;
+  color: #999999;
+  font-size: 12px;
+  text-align: center;
+}
+.heightauto {
+  height: auto !important;
+}
+.top0 {
+  top: 0 !important;
+}
+
+.mentlicss{
+  background: #212224;
+}
+.logincss{
+  float: left;
+  margin-top: 40px;
+  margin-left: 700px;
+  font-weight: 900;
+  font-size: 15px;
+  color: #222;
+}

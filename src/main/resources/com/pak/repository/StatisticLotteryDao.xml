@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.pak.repository.StatisticLotteryDao">
+
+	<insert id="addStatisticRecored">
+		INSERT INTO t_statistic_result (
+			user_id,
+			period_count,
+			period,
+			num,
+			group_number,
+			create_date
+		)
+		VALUES
+		<foreach collection="list" item="sta" separator =",">
+			(
+			#{sta.userId},
+			#{sta.periodCount},
+			#{sta.period},
+			#{sta.num},
+			#{sta.groupNumber},
+			#{sta.createDate}
+			)
+		</foreach >
+	</insert>
+	<select id="findStatisticCount" resultType="int">
+		SELECT COUNT(1) FROM t_statistic_result s WHERE s.period = #{period}
+	</select>
+</mapper>

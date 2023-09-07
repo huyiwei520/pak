@@ -1,0 +1,336 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.pak.repository.IPKLotteryDao">
+
+  <insert id="addPKResult">
+    INSERT INTO t_result (
+		  period,
+		  num1,
+		  num2,
+		  num3,
+		  num4,
+		  num5,
+		  num6,
+		  num7,
+		  num8,
+		  num9,
+		  num10,
+		  open_date,
+		  create_date
+		)
+		VALUES
+		  (
+		    #{period},
+		    #{num1},
+		    #{num2},
+		    #{num3},
+		    #{num4},
+		    #{num5},
+		    #{num6},
+		    #{num7},
+		    #{num8},
+		    #{num9},
+		    #{num10},
+		    #{openDate},
+		    now()
+		  )
+  </insert>
+
+  <insert id="addIdentify">
+      INSERT INTO t_identify (
+		  period,
+		  user_id
+		)
+		VALUES
+    <foreach collection="list" item="ide" separator =",">
+      (
+      #{ide.period},
+      #{ide.userId}
+      )
+    </foreach >
+  </insert>
+
+	<select id="findResultCount" resultType="int">
+		SELECT COUNT(1) dataCount FROM t_result r
+		WHERE 1=1
+		<if test="period != null">
+			and r.`period` = #{period}
+		</if>
+		<if test="time != null">
+			and DATE_FORMAT(r.open_date ,'%Y-%m-%d')=DATE_FORMAT(NOW(),'%Y-%m-%d')
+		</if>
+	</select>
+
+	<select id="findResultList" resultType="com.pak.dto.ResultDto">
+		SELECT r.`num1`,
+		r.`num2`,
+		r.`num3`,
+		r.`num4`,
+		r.`num5`,
+		r.`num6`,
+		r.`num7`,
+		r.`num8`,
+		r.`num9`,
+		r.`num10`,
+		r.`period` FROM t_result r where 1=1
+		<if test="period != null">
+			and r.period <![CDATA[<=]]> #{period}
+		</if>
+		ORDER BY r.`period` desc limit #{limitCount}
+	</select>
+
+	<select id="findOpenResult" resultType="com.pak.dto.ResultDto">
+		SELECT
+		  r.period        period,
+		  i.user_id       userId,
+		  r.num1          num1,
+		  r.num2          num2,
+		  r.num3          num3,
+		  r.num4          num4,
+		  r.num5          num5,
+		  r.num6          num6,
+		  r.num7          num7,
+		  r.num8          num8,
+		  r.num9          num9,
+		  r.num10         num10,
+		  r.open_date 	  openDate,
+		  i.data_flag     dataFlag,
+		  i.pk_flag       pkFlag,
+		  i.one_flag      oneFlag,
+		  i.two_flag      twoFlag,
+		  i.three_flag    threeFlag,
+		  i.four_flag     fourFlag,
+		  i.five_flag     fiveFlag,
+		  i.six_flag      sixFlag,
+		  i.seven_flag    sevenFlag,
+		  i.eight_flag    eightFlag,
+		  i.night_flag    nightFlag,
+		  i.ten_flag      tenFlag,
+		  now() 		  systemDate
+		FROM t_result r,
+		  t_identify i
+		WHERE r.period = i.period
+			  AND i.user_id = #{userId}
+		ORDER BY period DESC
+		LIMIT 1
+	</select>
+
+	<select id="findResultObject" resultType="com.pak.dto.ResultDto">
+		SELECT
+		r.period        period,
+		r.num1          num1,
+		r.num2          num2,
+		r.num3          num3,
+		r.num4          num4,
+		r.num5          num5,
+		r.num6          num6,
+		r.num7          num7,
+		r.num8          num8,
+		r.num9          num9,
+		r.num10         num10,
+		r.open_date 	openDate,
+		now() 		  systemDate
+		FROM t_result r
+		ORDER BY period DESC
+		LIMIT 1
+	</select>
+
+	<select id="findProgramById" resultType="com.pak.dto.ProgramDto">
+		SELECT
+			  p.program_id       programId,
+			  p.user_id          userId,
+			  p.pass_count       passCount,
+			  p.num_count        numCount,
+			  p.auto_flag		 autoFlag,
+			  p.double_count     doubleCount,
+			  p.description      description,
+			  p.one_money        oneMoney,
+			  p.two_money        twoMoney,
+			  p.three_money      threeMoney,
+			  p.four_money       fourMoney,
+			  p.five_money       fiveMoney,
+			  p.six_money        sixMoney,
+			  p.seven_money      sevenMoney,
+			  p.status           STATUS,
+			  l.line1_status     line1Status,
+			  l.line2_status     line2Status,
+			  l.line3_status     line3Status,
+			  l.line4_status     line4Status,
+			  l.line5_status     line5Status,
+			  l.line6_status     line6Status,
+			  l.line7_status     line7Status,
+			  l.line8_status     line8Status,
+			  l.line9_status     line9Status,
+			  l.line10_status    line10Status,
+			  p.num1			num1,
+			  p.num2			num2,
+			  p.num3			num3,
+			  p.num4			num4
+			FROM t_config_program p
+			  LEFT JOIN t_program_line l
+			ON p.program_id = l.program_id
+				AND p.user_id = l.user_id
+				WHERE p.program_id = #{programId}
+				AND  p.user_id = #{userId}
+	</select>
+
+	<select id="findHistoryList" resultType="com.pak.dto.HistoryDto">
+		SELECT
+		  h.period,
+		  p.description,
+		  h.msg,
+		  h.position,
+		  h.create_time createTime,
+		  h.update_time updateTime
+		FROM t_history h,
+		  t_config_program p
+		WHERE h.program_id = p.program_id
+			AND h.user_id = p.user_id
+			AND h.program_id = #{programId}
+			AND h.user_id = #{userId}
+			<if test="msgType != null">
+				AND h.msg_type= #{msgType}
+			</if>
+			<if test="position != null">
+				AND h.position = #{position}
+			</if>
+		order by h.period desc
+	</select>
+
+	<insert id="addHistoryMsg">
+		INSERT INTO t_history
+            (period,
+             user_id,
+             program_id,
+             msg,
+             msg_type,
+             `position`,
+             create_time)
+			VALUES (
+			#{period},
+			#{userId},
+			#{programId},
+			#{msg},
+			#{msgType},
+			#{position},
+			UNIX_TIMESTAMP()
+			)
+	</insert>
+
+	<update id="updatePKFlag">
+		UPDATE t_identify r SET r.`pk_flag` = 1 WHERE r.`period` = #{period} and  r.user_id = #{userId}
+	</update>
+	<update id="updateDataFlag">
+		UPDATE t_identify r SET r.`data_flag` = 1 WHERE r.`period` = #{period} and  r.user_id = #{userId}
+	</update>
+	<update id="updateOneFlag">
+		UPDATE t_identify r SET r.`one_flag` = 1 WHERE r.`period` = #{period} and  r.user_id = #{userId}
+	</update>
+	<update id="updateTwoFlag">
+		UPDATE t_identify r SET r.`two_flag` = 1 WHERE r.`period` = #{period} and  r.user_id = #{userId}
+	</update>
+	<update id="updateThreeFlag">
+		UPDATE t_identify r SET r.`three_flag` = 1 WHERE r.`period` = #{period} and  r.user_id = #{userId}
+	</update>
+	<update id="updateFourFlag">
+		UPDATE t_identify r SET r.`four_flag` = 1 WHERE r.`period` = #{period} and  r.user_id = #{userId}
+	</update>
+	<update id="updateFiveFlag">
+		UPDATE t_identify r SET r.`five_flag` = 1 WHERE r.`period` = #{period} and  r.user_id = #{userId}
+	</update>
+	<update id="updateSixFlag">
+		UPDATE t_identify r SET r.`six_flag` = 1 WHERE r.`period` = #{period} and  r.user_id = #{userId}
+	</update>
+	<update id="updateSevenFlag">
+		UPDATE t_identify r SET r.`seven_flag` = 1 WHERE r.`period` = #{period} and  r.user_id = #{userId}
+	</update>
+	<update id="updateEightFlag">
+		UPDATE t_identify r SET r.`eight_flag` = 1 WHERE r.`period` = #{period} and  r.user_id = #{userId}
+	</update>
+	<update id="updateNightFlag">
+		UPDATE t_identify r SET r.`night_flag` = 1 WHERE r.`period` = #{period} and  r.user_id = #{userId}
+	</update>
+	<update id="updateTenFlag">
+		UPDATE t_identify r SET r.`ten_flag` = 1 WHERE r.`period` = #{period} and  r.user_id = #{userId}
+	</update>
+	<update id="updateProgramStatus">
+		UPDATE t_config_program p
+			SET p.status = #{status}
+			WHERE p.user_id = #{userId}
+				AND p.program_id = #{programId}
+	</update>
+	<update id="updateProgramLineStatus">
+		UPDATE t_program_line l
+			SET
+				<if test="line1Status != null">
+					l.line1_status = #{line1Status},
+				</if>
+				<if test="line2Status != null">
+					l.line2_status = #{line2Status},
+				</if>
+				<if test="line3Status != null">
+					l.line3_status = #{line3Status},
+				</if>
+				<if test="line4Status != null">
+					l.line4_status = #{line4Status},
+				</if>
+				<if test="line5Status != null">
+					l.line5_status = #{line5Status},
+				</if>
+				<if test="line6Status != null">
+					l.line6_status = #{line6Status},
+				</if>
+				<if test="line7Status != null">
+					l.line7_status = #{line7Status},
+				</if>
+				<if test="line8Status != null">
+					l.line8_status = #{line8Status},
+				</if>
+				<if test="line9Status != null">
+					l.line9_status = #{line9Status},
+				</if>
+				<if test="line10Status != null">
+					l.line10_status = #{line10Status},
+				</if>
+				update_time = UNIX_TIMESTAMP()
+			WHERE p.user_id = #{userId}
+				AND p.program_id = #{programId}
+	</update>
+
+	<update id="updateProgram">
+		UPDATE t_config_program p
+			SET p.pass_count = #{passCount},
+				p.num_count = #{numCount},
+				p.description = #{description},
+				p.one_money = #{oneMoney},
+				p.two_money = #{twoMoney},
+				p.three_money = #{threeMoney},
+				p.four_money = #{fourMoney},
+				p.five_money = #{fiveMoney},
+				p.six_money = #{sixMoney},
+				p.seven_money = #{sevenMoney},
+				p.num1 = #{num1},
+				p.num2 = #{num2},
+				p.num3 = #{num3},
+				p.num4 = #{num4}
+			WHERE p.user_id = #{userId}
+				AND p.program_id = #{programId}
+	</update>
+
+	<select id="findProgramList" resultType="com.pak.dto.ProgramDto">
+		SELECT
+		  p.user_id 		userId,
+		  p.program_id 		programId,
+		  p.pass_count 		passCount,
+		  p.num_count 		numCount,
+		  p.status 			status,
+		  p.description 	description
+		FROM t_config_program p WHERE p.user_id = #{userId}
+	</select>
+	<select id="findTaskStatus" resultType="int">
+		SELECT t.status FROM t_task_time t where t.id = #{id}
+	</select>
+	<update id="updateTaskStatus">
+		update t_task_time t set t.status = #{status} where t.id = #{id}
+	</update>
+</mapper>

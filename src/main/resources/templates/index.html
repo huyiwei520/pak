@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta name="_csrf" th:content="${_csrf.token}" charset="UTF-8"/>
+    <meta name="_csrf_hader" th:content="${_csrf.headerName}" charset="UTF-8"/>
+    <title>PAK投注平台</title>
+</head>
+
+<script th:src="@{/js/jquery-3.3.1/jquery-3.3.1.js}" type="text/javascript"></script>
+<script th:src="@{/js/top.js}" type="text/javascript"></script>
+<script th:src="@{/js/index.js}" type="text/javascript"></script>
+<script th:src="@{/js/common.js}" type="text/javascript"></script>
+<link rel="stylesheet" type="text/css" th:href="@{/css/headorfood.css}"/>
+<link rel="stylesheet" type="text/css" th:href="@{/css/pk10kai.css}"/>
+<body>
+    <div class="bodybox pk10lzzhfxymbox zsbox">
+        <div id="headdivbox">
+            <div class="headboxf">
+                <div class="headboxh" style="left:19%;">
+                    <img src="" id="logoimg" style="float: left;" />
+                    <div class="logincss">
+                        <h1 th:inline="text" style="font-weight: 900;">
+                            <form th:action="@{/logout}" method="post">
+                                你好 [[${#httpServletRequest.remoteUser}]]!
+                                <input type="submit" value="注销" style="width: 50px;cursor: pointer; "/>
+                            </form>
+                        </h1>
+
+                    </div>
+                </div>
+            </div>
+            <div class="menubannbox heightauto">
+                <div class="menubox">
+                    <div class="menuboxr">
+                        <ul>
+                            <li style="width:150px;">
+                                <a th:href="@{/index}">投注区</a>
+                            </li>
+
+                            <li>
+                                <a href="#">统计分析</a>
+                            </li>
+                            <li>
+                                <a href="#">开奖结果</a>
+                            </li>
+
+                            <li>
+                                <a href="#">简介</a>
+                            </li>
+                        </ul>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="haomabox">
+            <div class="haomaqu" id="pk10">
+                <div class="haomaqul">
+                    <div class="haomaline">
+                        <div class="haomaimg">
+                            <img src="images/beijinpk.png" />
+                        </div>
+                        <div class="numberqu">
+                            <div class="nuberqutit">
+                                <span class="pk10tit">北京PK拾</span>第
+                                <span class="redfont preDrawIssue" id="pk10_curperiod"></span> 期开奖号码
+                            </div>
+                            <div class="kajianhao">
+                                <ul id="pk10_nums" class="numberbox">
+
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="touzhuqu">
+                    <div class="m-box-hd" style="margin-bottom:0">投注方案列表</div>
+                    <div class="topmenu">
+                        <table id="programListtable" style="border-bottom: 1px solid #cdd0d4;width:100%;margin:0px auto; margin: 0px;border-collapse:collapse;">
+                            <tr style="height: 30px; background-color: #F0F0F0;">
+                                <td style="width: 150px;font-weight:900;">
+                                    名称
+                                </td>
+                                <td style="width: 500px;font-weight:900;">
+                                    归则描述
+                                </td>
+                                <td style="width: 200px;font-weight:900;">
+                                    操作
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+                <!--右边-->
+                <div class="haomaqur">
+                    <div class="line linetit">距<span class="nextIssue" id="pk10_period"></span>期开奖仅有</div>
+                    <div class="line linetime" id="timebox">
+                        <div class="cuttime" style="display:block;">
+                            <span class="bgtime minute" id="pk10_minute"></span>
+                            <span>分</span>
+                            <span class="bgtime second" id="pk10_second"></span>
+                            <span>秒</span>
+                        </div>
+                    </div>
+                    <div class="line linetit height40">已开<span class="drawCount" id="pk10_publish"></span>期，还有<span class="sdrawCount" id="pk10_level"></span>期</div>
+                </div>
+            </div>
+        </div>
+        <div id="fooderbox">
+            <div class="footer3">
+                <div class="footer3c">Copyright &#169; 2018-2028
+
+                    北京赛车pk10 PAK玩投平台版权所有</div>
+            </div>
+        </div>
+    </div>
+    <!--弹出框-->
+    <div id="main">
+
+    </div>
+</body>
+</html>

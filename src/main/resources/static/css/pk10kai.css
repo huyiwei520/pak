@@ -1,0 +1,299 @@
+body {
+  background: #f0f0f0;
+}
+.bodybox .haomabox {
+  width: 1200px;
+  height: auto;
+  margin: 20px auto 0;
+
+}
+
+.bodybox .haomaqu {
+  width: 1200px;
+  height: 410px;
+  background: #ffffff;
+  padding: 15px;
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+}
+.bodybox .haomaqu .haomaqul {
+  width: 917px;
+  display: inline-block;
+  float: left;
+}
+.bodybox .haomaqu .haomaqul .haomaline {
+  margin-right: 10px;
+  height: auto;
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  clear: both;
+  height: 120px;
+  border-bottom: 1px solid #e7e7e7;
+}
+.bodybox .haomaqu .haomaqul .haomaline div {
+  display: inline-block;
+  float: left;
+}
+.bodybox .haomaqu .haomaqul .haomaline .haomaimg {
+  width: 100px;
+  text-align: center;
+}
+.bodybox .haomaqu .haomaqul .haomaline .haomaimg img {
+  width: 100%;
+}
+
+.bodybox .haomaqu .haomaqul .haomaline .numberqu {
+  margin-left: 55px;
+  margin-top: 22px;
+  color: #666666;
+  height: 77px;
+  overflow: hidden;
+  display: block;
+  width: 650px;
+}
+
+.bodybox .haomaqu .haomaqul .haomaline .numberqu .nuberqutit {
+  width: 100%;
+}
+.bodybox .haomaqu .haomaqul .haomaline .numberqu .nuberqutit .pk10tit {
+  font-size: 16px;
+  color: #000000;
+  margin-right: 10px;
+}
+.bodybox .haomaqu .haomaqul .haomaline .numberqu .nuberqutit .preIssue {
+  margin: 0 5px;
+  color: #f44a07;
+}
+.bodybox .haomaqu .haomaqul .haomaline .numberqu .kajianhao {
+  margin-top: 16px;
+  display: block;
+}
+.pk10lzzhfxymbox .haomaqu .haomaqubox .haomaqul .haomaline .numberqu .nuberqutit {
+  font-size: 16px;
+  width: 100%;
+}
+.pk10lzzhfxymbox .haomaqu .haomaqubox .haomaqul .haomaline .numberqu .nuberqutit .divl {
+  float: left;
+}
+.pk10lzzhfxymbox .haomaqu .haomaqubox .haomaqul .haomaline .numberqu .nuberqutit .divl a {
+  display: inline-block;
+}
+.pk10lzzhfxymbox .haomaqu .haomaqubox .haomaqul .haomaline .numberqu .nuberqutit .divl a .pk10tit {
+  color: #000000;
+  font-size: 18px;
+  margin-right: 20px;
+}
+.pk10lzzhfxymbox .haomaqu .haomaqubox .haomaqul .haomaline .numberqu .nuberqutit .divl .redfont {
+  color: #f44a07;
+}
+
+.bodybox .haomaqu .haomaqur {
+  width: 223px;
+  display: inline-block;
+  border-left: 1px solid #e7e7e7;
+  padding-left: 10px;
+  height: 100%;
+}
+.bodybox .haomaqu .haomaqur .line {
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+  color: #666666;
+}
+.bodybox .haomaqu .haomaqur .linetit {
+  height: 50px;
+  line-height: 50px;
+}
+.bodybox .haomaqu .haomaqur .linetit .nextIssue {
+  color: #f44a07;
+  margin: 0 5px;
+}
+.bodybox .haomaqu .haomaqur .linelast {
+  border-bottom: 1px solid #e5e5e5;
+}
+.bodybox .haomaqu .haomaqur .linelast .drawCount,
+.bodybox .haomaqu .haomaqur .linelast .sdrawCount {
+  margin: 0 5px;
+}
+.bodybox .haomaqu .haomaqur .margt20 {
+  margin-top: 65px;
+}
+.bodybox .haomaqu .haomaqur .linetime {
+  height: 40px;
+  line-height: 40px;
+}
+.bodybox .haomaqu .haomaqur .linetime .bgtime {
+  height: 40px;
+  width: 40px;
+  background: #444553;
+  color: #ffd200;
+  text-align: center;
+  font-size: 16px;
+  border-radius: 2px;
+  -moz-border-radius: 2px;
+  -webkit-border-radius: 2px;
+}
+.bodybox .haomaqu .haomaqur .linetime .opening {
+  width: 100%;
+  height: 100%;
+  background: #212224;
+  border-radius: 2px;
+  -moz-border-radius: 2px;
+  -webkit-border-radius: 2px;
+  color: #f7f200;
+  padding-left: 30px;
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  font-size: 18px;
+  text-align: left;
+  display: none;
+  float: right;
+}
+.bodybox .haomaqu .haomaqur .linetime .cuttime {
+  color: #666666 !important;
+}
+.bodybox .haomaqu .haomaqur .linetime .indextime {
+  color: red;
+}
+.bodybox .haomaqu .haomaqur .linetime span {
+  display: inline-block;
+  height: 40px;
+  line-height: 40px;
+}
+
+.touzhuqu{
+  width: 917px;
+  float:left;
+}
+.m-box-hd {
+  padding: 15px 0;
+  margin: 0 10px;
+  position: relative;
+  border-bottom: 1px solid #e7e7e7;
+  background-color: #fbfbfb;
+}
+.topmenu {
+  height: 25px;
+  position: relative;
+  padding: 15px 9px;
+}
+.topmenu ul{
+  display:inline;
+  white-space: nowrap;
+}
+.topmenu ul li{
+  padding: 10px 20px;
+  display: inline-block;
+  white-space:nowrap;
+  width:250px;
+  font-weight: 900;
+}
+
+.programbtn{
+  margin:0 5px ;
+  cursor:pointer;
+}
+
+#main {
+  padding-top:90px;
+  text-align:center;
+}
+#fullbg {
+  background-color:gray;
+  left:0;
+  opacity:0.8;
+  position:absolute;
+  top:0;
+  z-index:3;
+  filter:alpha(opacity=80);
+  -moz-opacity:0.5;
+  -khtml-opacity:0.5;
+}
+#dialog {
+  background-color:#fff;
+  border: 1px solid #e7e7e7;
+  height:400px;
+  left:50%;
+  margin:-200px 0 0 -200px;
+  padding:1px;
+  position:fixed !important; /* 浮动对话框 */
+  position:absolute;
+  top:50%;
+  width:400px;
+  z-index:5;
+  border-radius:5px;
+  display:none;
+}
+#dialog p {
+  margin:0 0 12px;
+  height:24px;
+  line-height:24px;
+  background:#CCCCCC;
+}
+#dialog p.close {
+  text-align:right;
+  padding-right:10px;
+}
+#dialog p.close a {
+  color:#fff;
+  text-decoration:none;
+}
+.ideal-label {
+  top: .4em;
+  margin: 0 1.5em 0 0;
+  text-align: left;
+  color: #222;
+}
+
+.ideal-wrap {
+  float: left;
+  clear: both;
+  position: relative;
+  margin: 6px 15px;
+  text-align: center;
+  font-size: 15px;
+}
+
+.ideal-input{
+  font-family: sans-serif;
+  padding: 5.5px;
+  width: 80px;
+  border: 1px solid #aaa;
+  background: #fff;
+  outline: 0;
+  color: #666;
+  border-radius: 3px;
+  -moz-box-shadow: inset 0 1px 2px rgba(0,0,0,0.15),transparent 0 0 0;
+  -webkit-box-shadow: inset 0 1px 2px rgba(0,0,0,0.15), transparent 0 0 0;
+  box-shadow: inset 0 1px 2px rgba(0,0,0,0.15), transparent 0 0 0;
+  -webkit-transition: background .3s
+}
+.ideal-textarea{
+  width: 250px;
+  height: 50px;
+  border: 1px solid #aaa;
+  resize: none;
+}
+
+.dialogsavebtn{
+  border: none;
+  color: white;
+  padding: 10px 25px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  background-color: #555555;
+  cursor:pointer;
+}
+
+#programListtable tr {
+  border-bottom: 1px solid #e7e7e7;
+}
+#programListtable td {
+  padding-left: 5px;
+  color: #222;
+}
